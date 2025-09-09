@@ -23,7 +23,7 @@ const MovieEdit = ({ movie, onUpdated }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-8 bg-gradient-to-br from-yellow-100 to-blue-100 shadow-xl rounded-2xl mb-8 border border-yellow-200 flex flex-col gap-6"
+      className="p-8 bg-yellow-50 shadow-xl rounded-2xl mb-8 border border-yellow-200 flex flex-col gap-6"
     >
       <div className="flex items-center gap-3 mb-4">
         <span className="inline-block text-3xl text-yellow-600">✏️</span>
@@ -75,7 +75,7 @@ const MovieEdit = ({ movie, onUpdated }) => {
       </div>
       <button
         type="submit"
-        className="bg-gradient-to-r from-yellow-400 to-blue-400 hover:from-yellow-500 hover:to-blue-500 text-white font-bold px-6 py-3 rounded-xl shadow transition disabled:opacity-50 mt-4"
+        className="bg-yellow-500 text-white font-bold px-6 py-3 rounded-xl shadow transition disabled:opacity-50 mt-4"
         disabled={loading}
       >
         {loading ? "Saving..." : "Save Changes"}
