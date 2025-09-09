@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const MovieCreate = ({ onCreated }) => {
   const [form, setForm] = useState({
@@ -36,52 +36,58 @@ const MovieCreate = ({ onCreated }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-6 bg-white shadow rounded-lg mb-6 border border-gray-200 flex flex-col gap-3"
+      className="p-8 bg-green-50 shadow-xl rounded-2xl mb-8 border border-green-200 flex flex-col gap-6"
     >
-      <h2 className="text-xl font-bold mb-2 text-green-700">Add Movie</h2>
-      <input
-        name="title"
-        value={form.title}
-        onChange={handleChange}
-        placeholder="Title"
-        className="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-400"
-        required
-      />
-      <input
-        name="director"
-        value={form.director}
-        onChange={handleChange}
-        placeholder="Director"
-        className="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-400"
-        required
-      />
-      <input
-        name="genre"
-        value={form.genre}
-        onChange={handleChange}
-        placeholder="Genre"
-        className="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-400"
-        required
-      />
-      <input
-        name="release_year"
-        value={form.release_year}
-        onChange={handleChange}
-        placeholder="Release Year"
-        className="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-400"
-        required
-      />
-      <input
-        name="rating"
-        value={form.rating}
-        onChange={handleChange}
-        placeholder="Rating"
-        className="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-400"
-        required
-      />
+      <div className="flex items-center gap-3 mb-4">
+        <h2 className="text-2xl font-extrabold text-green-700 tracking-tight">
+          Add a New Movie
+        </h2>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input
+          name="title"
+          value={form.title}
+          onChange={handleChange}
+          placeholder="Title"
+          className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 bg-white"
+          required
+        />
+        <input
+          name="director"
+          value={form.director}
+          onChange={handleChange}
+          placeholder="Director"
+          className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 bg-white"
+          required
+        />
+        <input
+          name="genre"
+          value={form.genre}
+          onChange={handleChange}
+          placeholder="Genre"
+          className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 bg-white"
+          required
+        />
+        <input
+          name="release_year"
+          value={form.release_year}
+          onChange={handleChange}
+          placeholder="Release Year"
+          className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 bg-white"
+          required
+        />
+        <input
+          name="rating"
+          value={form.rating}
+          onChange={handleChange}
+          placeholder="Rating"
+          className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 bg-white"
+          required
+        />
+      </div>
       <button
         type="submit"
-        className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition"
+        className="bg-green-700 text-white font-bold px-6 py-3 rounded-xl shadow transition disabled:opacity-50 mt-4"
         disabled={loading}
       >
         {loading ? "Adding..." : "Add Movie"}

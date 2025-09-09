@@ -23,52 +23,59 @@ const MovieEdit = ({ movie, onUpdated }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-6 bg-white shadow rounded-lg mb-6 border border-gray-200 flex flex-col gap-3"
+      className="p-8 bg-gradient-to-br from-yellow-100 to-blue-100 shadow-xl rounded-2xl mb-8 border border-yellow-200 flex flex-col gap-6"
     >
-      <h2 className="text-xl font-bold mb-2 text-yellow-700">Edit Movie</h2>
-      <input
-        name="title"
-        value={form.title}
-        onChange={handleChange}
-        placeholder="Title"
-        className="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
-        required
-      />
-      <input
-        name="director"
-        value={form.director}
-        onChange={handleChange}
-        placeholder="Director"
-        className="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
-        required
-      />
-      <input
-        name="genre"
-        value={form.genre}
-        onChange={handleChange}
-        placeholder="Genre"
-        className="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
-        required
-      />
-      <input
-        name="release_year"
-        value={form.release_year}
-        onChange={handleChange}
-        placeholder="Release Year"
-        className="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
-        required
-      />
-      <input
-        name="rating"
-        value={form.rating}
-        onChange={handleChange}
-        placeholder="Rating"
-        className="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
-        required
-      />
+      <div className="flex items-center gap-3 mb-4">
+        <span className="inline-block text-3xl text-yellow-600">✏️</span>
+        <h2 className="text-2xl font-extrabold text-yellow-700 tracking-tight">
+          Edit Movie
+        </h2>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input
+          name="title"
+          value={form.title}
+          onChange={handleChange}
+          placeholder="Title"
+          className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 bg-white"
+          required
+        />
+        <input
+          name="director"
+          value={form.director}
+          onChange={handleChange}
+          placeholder="Director"
+          className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 bg-white"
+          required
+        />
+        <input
+          name="genre"
+          value={form.genre}
+          onChange={handleChange}
+          placeholder="Genre"
+          className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 bg-white"
+          required
+        />
+        <input
+          name="release_year"
+          value={form.release_year}
+          onChange={handleChange}
+          placeholder="Release Year"
+          className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 bg-white"
+          required
+        />
+        <input
+          name="rating"
+          value={form.rating}
+          onChange={handleChange}
+          placeholder="Rating"
+          className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 bg-white"
+          required
+        />
+      </div>
       <button
         type="submit"
-        className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded transition"
+        className="bg-gradient-to-r from-yellow-400 to-blue-400 hover:from-yellow-500 hover:to-blue-500 text-white font-bold px-6 py-3 rounded-xl shadow transition disabled:opacity-50 mt-4"
         disabled={loading}
       >
         {loading ? "Saving..." : "Save Changes"}

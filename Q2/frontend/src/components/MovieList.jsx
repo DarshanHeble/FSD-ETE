@@ -20,19 +20,27 @@ const MovieList = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4 text-blue-700">Movie List</h2>
-      <ul className="grid gap-4">
+      <div className="flex items-center gap-2 mb-4">
+        <span className="inline-block text-3xl text-blue-600">📽️</span>
+        <h2 className="text-2xl font-extrabold text-blue-700 tracking-tight">
+          Movie List
+        </h2>
+      </div>
+      <ul className="grid gap-6">
         {movies.map((movie) => (
           <li
             key={movie.id}
-            className="bg-white shadow rounded-lg p-4 border border-gray-200 flex flex-col gap-1"
+            className="bg-gradient-to-br from-blue-50 to-gray-100 shadow-lg rounded-2xl p-6 border border-blue-200 flex flex-col gap-2 hover:scale-[1.02] transition"
           >
-            <span className="text-lg font-semibold text-gray-800">
-              {movie.title}{" "}
-              <span className="text-sm text-gray-500">
-                ({movie.release_year})
+            <div className="flex items-center gap-2">
+              <span className="text-xl">🎬</span>
+              <span className="text-lg font-semibold text-gray-800">
+                {movie.title}
+                <span className="text-sm text-gray-500 ml-2">
+                  ({movie.release_year})
+                </span>
               </span>
-            </span>
+            </div>
             <span className="text-gray-600">
               Director: <span className="font-medium">{movie.director}</span>
             </span>
